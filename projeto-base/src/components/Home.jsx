@@ -8,7 +8,7 @@ const Home = () => {
 
             <div className="home-content">
                 <div className="home-content__colLeft">
-                    <h1>Assuma o controle total do seu sucesso financeiro</h1>
+                    <h1>Assuma o Controle Total do Seu Sucesso Financeiro</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe sapiente in minima soluta veniam numquam molestias illo exercitationem ex quod.</p>
                     <div className="home_content__buttons">
                         <a className="primary-button" href="#">Abra uma conta</a>

@@ -4,6 +4,8 @@ import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PaidIcon from '@mui/icons-material/Paid';
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import InfoIcon from "@mui/icons-material/Info";
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import SecurityIcon from '@mui/icons-material/Security';
 import { HiOutlineBars3 } from "react-icons/hi2"
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
@@ -36,12 +38,16 @@ const Navbar = () => {
             text: "Termos e condições",
             icon: <InfoIcon />,
         },
+        {
+            text: "Privacidade e segurança",
+            icon: <SecurityIcon />,
+        },
     ];
 
     return (
         <nav>
             <div className="nav-logo-container">
-                <a href="">AR Bank</a>
+                <a href=""><AccountBalanceIcon /> AR Bank</a>
                 {/* <img src={Logo} alt="Logo Banco"/> */}
             </div>
 
@@ -49,6 +55,11 @@ const Navbar = () => {
                 <a href="">Sobre</a>
                 <a href="">Avaliações</a>
                 <a href="">Contatos</a>
+            </div>
+
+            <div className="navbar-buttons-container">
+                <a href="" className="secondary-button">Sign Up <KeyboardDoubleArrowRightIcon /></a>
+                <a href="" className="primary-button">Log In <KeyboardDoubleArrowRightIcon /></a>
             </div>
 
             <div className="navbar-menu-container">

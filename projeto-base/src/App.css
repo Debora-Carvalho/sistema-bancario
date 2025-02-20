@@ -9,12 +9,15 @@ body, .home-container {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
-  background-color: #0001;
 }
 
 .App {
-  min-height: 100vh;
+  max-height: 100vh;
   margin: 0rem auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 nav {
@@ -28,6 +31,7 @@ nav {
 .nav-logo-container {
   max-width: 120px;
   max-height: 100px;
+  gap: 2rem;
   display: flex;
   align-items: center;
   justify-content: center; 
@@ -35,11 +39,17 @@ nav {
 
 .navbar-links-container a {
   margin-right: 3rem;
-  text-transform: uppercase;
   text-decoration: none;
   color: #000;
   font-size: 1.1rem;
   font-weight: 400;
+}
+
+.navbar-buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
 }
 
 .home-content {
@@ -47,13 +57,28 @@ nav {
   grid-template-columns: 2fr 3fr;
   align-items: center;
   justify-content: center;
-  height: 88vh;
-  margin: 0rem 2.5rem;
+  height: 78vh;
+  margin: 0rem 8rem;
 }
 
-/* .navbar-menu-container {
-  display: none;
-}   */
+.home-content__colLeft h1 {
+  font-size: 3rem;
+  line-height: 50px;
+  margin: 2rem 0 3rem 0;
+}
+
+.home-content__colLeft p {
+  margin: 2rem 0;
+}
+
+.navbar-menu-container__buttons {
+  margin: 0 2rem 0 0;
+}
+
+.navbar-menu-container a {
+  /* display: none; */
+  margin: 0rem 1rem;
+}   
 
 .home_content__buttons {
   display: flex;
@@ -64,11 +89,10 @@ nav {
   font-size: 1.1rem;
   font-weight: 400;
   color: #fff;
-  text-transform: uppercase;
   padding: 0.9rem 1.75rem;
   outline: none;
   border: none;
-  border-radius: 5rem;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -78,7 +102,8 @@ nav {
 }
 
 .secondary-button {
-  background-color: #363535;
+  background-color: transparent;
+  border: solid 2px rgb(255, 255, 255);
 }
 
 .primary-button:hover {
@@ -87,12 +112,22 @@ nav {
 }
 
 .secondary-button:hover {
-  background-color: #616060;
-  color: #fff;
+  background-color: #fffdfd;
+  color: #000;
 }
 
 .home-content__tagsResults {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   gap: 2.5rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  font-size: 0.75rem;
+  height: 9vh;
 }
