@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Logo from "../assets/logo-bank.png";
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PaidIcon from '@mui/icons-material/Paid';
@@ -42,7 +41,8 @@ const Navbar = () => {
     return (
         <nav>
             <div className="nav-logo-container">
-                <img src={Logo} alt="Logo Banco"/>
+                <a href="">AR Bank</a>
+                {/* <img src={Logo} alt="Logo Banco"/> */}
             </div>
 
             <div className="navbar-links-container">

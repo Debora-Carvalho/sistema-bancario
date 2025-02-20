@@ -1,4 +1,5 @@
 import Navbar from './Navbar.jsx';
+import Footer from './Footer.jsx';
 
 const Home = () => {
     return (
@@ -29,6 +30,8 @@ const Home = () => {
                     </div>   
                 </div>
             </div>
+
+            <Footer />
         </div>
     );   
 };
