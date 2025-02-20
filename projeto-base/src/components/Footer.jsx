@@ -6,6 +6,7 @@ const Footer = () => {
         <div className="footer-container">
             <AccountBalanceIcon />
             <p>© 2025 AR Bank, Inc.</p>
+            <p>App</p>
             <p>Termos</p>
             <p>Privacidade e segurança</p>
             <p>Contatos</p>

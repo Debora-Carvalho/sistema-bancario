@@ -6,6 +6,7 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import InfoIcon from "@mui/icons-material/Info";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import SecurityIcon from '@mui/icons-material/Security';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { HiOutlineBars3 } from "react-icons/hi2"
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
@@ -30,6 +31,10 @@ const Navbar = () => {
             text: "Investimentos",
             icon: <PaidIcon />,
         },
+        {
+            text: "Seguros",
+            icon: <VolunteerActivismIcon />,
+        },        
         {
             text: "Contatos",
             icon: <PhoneRoundedIcon />,
