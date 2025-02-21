@@ -1,16 +1,19 @@
-import { useState } from 'react'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
+import SistemaBancario from './components/SistemaBancario.jsx';
 import './App.css'
 
-
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="App">
-        <Home />
-      </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/banco" element={<SistemaBancario/>} />
+      </Routes>    
+    </BrowserRouter>
     </>
   )
 }

@@ -20,12 +20,12 @@ a {
   text-decoration: none;
 }
 
-.home-container {
+.home-container, .banco-container {
   background-color: #880029;
   color: #fff;
 }
 
-.home-content__colLeft img {
+.home-content__colLeft img, .banco-container-content__colLeft img {
   width: 100%;
 }
 
@@ -87,7 +87,7 @@ nav {
   justify-content: center;
 }
 
-.home-content {
+.home-content, .banco-container-content {
   display: grid;
   grid-template-columns: 60% 48%;
   align-items: center;
@@ -193,4 +193,26 @@ nav {
 
 .footer-container p {
   cursor: pointer;
+}
+
+.banco-container-content__colRight {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  color: #242424;
+  width: 100%;
+  height: 60vh;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.banco-container-content__colRight p {
+  margin: 0 8%;
+}
+
+.form-container-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
