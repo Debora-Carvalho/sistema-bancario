@@ -1,8 +1,43 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# AR Bank 
 
-Currently, two official plugins are available:
+Projeto de sistema bancário simples utilizando React.js e Vite.js.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Screenshots
+
+![Website Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Para executar localmente
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/Debora-Carvalho/sistema-bancario.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd projeto-base
+```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie o servidor
+
+```bash
+  npm run dev
+```
+
+
+## Autores
+
+- [@Debora-Carvalho](https://github.com/Debora-Carvalho)
+
+
