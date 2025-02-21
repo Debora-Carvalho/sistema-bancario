@@ -53,7 +53,6 @@ const Navbar = () => {
         <nav>
             <div className="nav-logo-container">
                 <a href=""><AccountBalanceIcon /> AR Bank</a>
-                {/* <img src={Logo} alt="Logo Banco"/> */}
             </div>
 
             <div className="navbar-links-container">
