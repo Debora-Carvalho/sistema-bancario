@@ -17,7 +17,7 @@ const Home = () => {
 
                 <div className="home-content__colRight">
                     <h1>Assuma o Controle Total do Seu Sucesso Financeiro</h1>
-                    <p>Tudo o que você precisa à um clique de distância - no Internet Banking ou no App, AR Bank é o banco digital ideal para quem busca transparência e segurança.</p>
+                    <p>Tudo o que você precisa à um clique de distância  –  no Internet Banking ou no App, AR Bank é o banco digital ideal para quem busca transparência e segurança.</p>
                     <div className="home_content__buttons">
                         <Link to="/banco" className="primary-button">Abra uma conta <KeyboardDoubleArrowRightIcon /></Link>
                         <a className="secondary-button" href="#">Entre <AccountBalanceIcon /></a>

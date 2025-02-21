@@ -1,0 +1,85 @@
+.banco-container-content__colRight { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    color: #242424;
+    width: 100%;
+    height: 70vh;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+  
+.banco-container-content__colRight h1 {
+    font-size: 1.8rem;
+    color: #880029;
+    margin-bottom: 0.8rem;
+}
+  
+.banco-container-content__colRight p {
+    margin: 0 10%;
+    font-size: 1rem;
+    color: #242424;
+}
+
+.form-container-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #880029;
+    margin-bottom: 0.2rem;
+}
+  
+input,
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #880029;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #242424;
+    outline: none;
+    transition: 0.3s;
+}
+  
+input:focus,
+select:focus {
+    border-color: #ff6b4d;
+    box-shadow: 0 0 6px rgba(255, 107, 77, 0.5);
+}  
+
+.banco-container-content__colRight form .primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #880029;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.banco-container-content__colRight form .primary-button:hover {
+    background-color: #ff6b4d;
+}
+
+@media (max-width: 768px) {
+  .form-container-inputs {
+    grid-template-columns: 1fr;
+  }
+}
