@@ -5,7 +5,10 @@ import Footer from './Footer.jsx';
 import ImgHero from '../assets/image-hero.webp';
 import ImgPerfil from '../assets/foto-perfil-feminina.png'
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 const SistemaBancario = () => {
@@ -104,7 +107,7 @@ const SistemaBancario = () => {
                             </div>
                             <button type="submit" className="primary-button">Abrir conta <AccountBalanceIcon /></button>
                         </form>
-                        {conta && <p>Conta aberta com sucesso! O Nº de sua conta é {conta.numero} <button onClick={() => setPage('login')}>Ir para login</button></p>}
+                        {conta && <p>Conta aberta com sucesso! O Nº de sua conta é {conta.numero} <button onClick={() => setPage('login')} className='button-login'>Ir para login</button></p>}
                     </div>
                 </div>
                 <Footer />
@@ -156,25 +159,25 @@ const SistemaBancario = () => {
                     <div className="banco-container-content__colRight grid-functions">
                       <div className="grid-functions__card perfil_card_container__saldo">
                         <p className='perfil-card__saldo'>R$ {saldo.toFixed(2)}</p>
-                        <span>Ver extrato </span>
+                        <span>Ver extrato <KeyboardArrowRightIcon /></span>
                       </div>
 
                       <div className="grid-functions__card perfil_card_container__saldo">
-                        <button>Ver meus cartões</button>
+                        <button className='grid-functions__cardButton'>Ver meus cartões <CreditCardIcon/></button>
                       </div>
 
                       <div className="grid-functions__card">
-                        <button onClick={depositar}>Depositar</button> 
+                        <button onClick={depositar} className='grid-functions__cardButton'>Depositar <AttachMoneyIcon /></button> 
                         <input type="number" placeholder="Digite um valor" value={valorOperacaoD} onChange={(e) => setValorOperacaoD(e.target.value)} />                       
                       </div>
 
                       <div className="grid-functions__card">
-                        <button onClick={sacar}>Sacar</button>
+                        <button onClick={sacar} className='grid-functions__cardButton'>Sacar <AttachMoneyIcon /></button>
                         <input type="number" placeholder="Digite um valor" value={valorOperacaoS} onChange={(e) => setValorOperacaoS(e.target.value)} /> 
                       </div>
 
                       <div className="grid-functions__card">
-                        <button>Consultar saldo</button>
+                        <button className='grid-functions__cardButton'>Consultar saldo <SavingsOutlinedIcon /></button>
                       </div>
 
                       <div className="grid-functions__card">
