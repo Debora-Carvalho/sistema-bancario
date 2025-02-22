@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
 import ImgHero from '../assets/image-hero.webp';
 import ImgPerfil from '../assets/foto-perfil-feminina.png'
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 const SistemaBancario = () => {
     const [page, setPage] = useState('cadastro');
     const [conta, setConta] = useState(null); // armazena os dados da conta
     const [numeroConta, setNumeroConta] = useState(''); // armazena o número da conta para login
     const [saldo, setSaldo] = useState(0);
-    const [valorOperacao, setValorOperacao] = useState("");
+    const [valorOperacaoD, setValorOperacaoD] = useState("");
+    const [valorOperacaoS, setValorOperacaoS] = useState("");
 
     const abrirConta = (e) => {
         e.preventDefault();
@@ -27,7 +30,7 @@ const SistemaBancario = () => {
         };
         setConta(novaConta);
         setSaldo(0);
-        setNumeroConta(''); // Limpa o campo númeroConta para que o usuário escreva no login
+        setNumeroConta(''); 
     };
 
     const login = (e) => {
@@ -40,18 +43,18 @@ const SistemaBancario = () => {
     };
 
     const depositar = () => {
-        const valor = parseFloat(valorOperacao);
+        const valor = parseFloat(valorOperacaoD);
         if (valor > 0) {
             setSaldo(saldo + valor);
-            setValorOperacao("");
+            setValorOperacaoD("");
         }
     };
 
     const sacar = () => {
-        const valor = parseFloat(valorOperacao);
+        const valor = parseFloat(valorOperacaoS);
         if (valor > 0 && valor <= saldo) {
             setSaldo(saldo - valor);
-            setValorOperacao("");
+            setValorOperacaoS("");
         } else {
             alert('Saldo insuficiente!');
         }
@@ -142,22 +145,44 @@ const SistemaBancario = () => {
                       <div className='perfil-card-container'>
                         <img src={ImgPerfil} alt="Foto de perfil" className="perfil-card-container__img" />
                       </div>
-                      <h2>Olá, {conta.nome}!</h2>
-                      <div className="perfil_card_container__saldo">
-                        <p className='perfil-card__saldo'><AttachMoneyIcon /> {saldo.toFixed(2)}</p>
-                        <span>Ver extrato</span>
+                      <h2 className='perfil-card-container__name'>Olá, <span>{conta.nome}</span>!</h2>
+                      <div className="perfil-card__infos">
+                        <p><b>Banco:</b> {conta.banco_nome} - {conta.banco_numero}</p>
+                        <p><b>Agência:</b> {conta.ag_nome} - {conta.ag_numero}</p>
+                        <p><b>Tipo:</b> {conta.tipo} - nº {conta.numero}</p>
                       </div>
-                      <p>Agência: {conta.ag_nome} - {conta.ag_numero}</p>
-                      <p>Banco: {conta.banco_nome} - {conta.banco_numero}</p>
-                      <p>Tipo: {conta.tipo} - nº {conta.numero}</p>
-                    </div>
-                    <div className="banco-container-content__colRight">
-                        <input type="number" placeholder="Digite um valor" value={valorOperacao} onChange={(e) => setValorOperacao(e.target.value)} />
-                        <button onClick={depositar}>Depositar</button>
-                        <button onClick={sacar}>Sacar</button>
 
+                    </div>
+                    <div className="banco-container-content__colRight grid-functions">
+                      <div className="grid-functions__card perfil_card_container__saldo">
+                        <p className='perfil-card__saldo'>R$ {saldo.toFixed(2)}</p>
+                        <span>Ver extrato </span>
+                      </div>
+
+                      <div className="grid-functions__card perfil_card_container__saldo">
+                        <button>Ver meus cartões</button>
+                      </div>
+
+                      <div className="grid-functions__card">
+                        <button onClick={depositar}>Depositar</button> 
+                        <input type="number" placeholder="Digite um valor" value={valorOperacaoD} onChange={(e) => setValorOperacaoD(e.target.value)} />                       
+                      </div>
+
+                      <div className="grid-functions__card">
+                        <button onClick={sacar}>Sacar</button>
+                        <input type="number" placeholder="Digite um valor" value={valorOperacaoS} onChange={(e) => setValorOperacaoS(e.target.value)} /> 
+                      </div>
+
+                      <div className="grid-functions__card">
                         <button>Consultar saldo</button>
-                        <button onClick={() => setPage('cadastro')}>Encerrar conta</button>
+                      </div>
+
+                      <div className="grid-functions__card">
+                        <button className='grid-functions__cardButton'>
+                          <Link to="/">Encerrar conta</Link>
+                          <ExitToAppIcon />
+                        </button>
+                      </div>
                     </div>
                 </div>
                 <Footer />
