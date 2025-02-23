@@ -197,6 +197,29 @@ select:focus {
     color: #ff6b4d;
 }
 
+.details-saldo__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+.details-saldo__card p {
+    font-size: .9rem;
+    color: #fff;
+    white-space: nowrap;  
+    overflow: hidden;  
+}
+
+.details-saldo__card .tagEntradas {
+    color: #81ff7a;
+}
+
+.details-saldo__card .tagSaidas {
+    color: #e70b04f6;
+}
+
 .button-login {
     background: none;
     border: none;

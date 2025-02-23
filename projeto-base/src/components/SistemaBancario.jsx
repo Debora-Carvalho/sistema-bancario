@@ -18,6 +18,19 @@ const SistemaBancario = () => {
     const [saldo, setSaldo] = useState(0);
     const [valorOperacaoD, setValorOperacaoD] = useState("");
     const [valorOperacaoS, setValorOperacaoS] = useState("");
+    const [entradas, setEntradas] = useState(0);
+    const [saidas, setSaidas] = useState(0);
+    const [mostrarSaldo, setMostrarSaldo] = useState(false);
+
+    const toggleSaldo = () => {
+        setMostrarSaldo(!mostrarSaldo);
+    };
+
+    const tipoContaMap = {
+      1: 'Conta corrente',
+      2: 'Conta poupança',
+      3: 'Conta conjunta'
+    };
 
     const abrirConta = (e) => {
         e.preventDefault();
@@ -49,7 +62,8 @@ const SistemaBancario = () => {
         const valor = parseFloat(valorOperacaoD);
         if (valor > 0) {
             setSaldo(saldo + valor);
-            setValorOperacaoD("");         
+            setEntradas(entradas + valor);  
+            setValorOperacaoD("");       
         } else {
           alert('Erro ao depositar, digite um valor válido!');          
         }
@@ -59,6 +73,7 @@ const SistemaBancario = () => {
         const valor = parseFloat(valorOperacaoS);
         if (valor > 0 && valor <= saldo) {
             setSaldo(saldo - valor);
+            setSaidas(saidas + valor);  
             setValorOperacaoS("");
         } else {
             alert('Saldo insuficiente para sacar!');
@@ -154,7 +169,7 @@ const SistemaBancario = () => {
                       <div className="perfil-card__infos">
                         <p><b>Banco:</b> {conta.banco_nome} - {conta.banco_numero}</p>
                         <p><b>Agência:</b> {conta.ag_nome} - {conta.ag_numero}</p>
-                        <p><b>Tipo:</b> {conta.tipo} - nº {conta.numero}</p>
+                        <p><b>Tipo:</b> [{conta.tipo}] {tipoContaMap[conta.tipo]} - nº {conta.numero}</p>
                       </div>
 
                     </div>
@@ -178,8 +193,17 @@ const SistemaBancario = () => {
                         <input type="number" placeholder="Digite um valor" value={valorOperacaoS} onChange={(e) => setValorOperacaoS(e.target.value)} /> 
                       </div>
 
-                      <div className="grid-functions__card">
-                        <button className='grid-functions__cardButton'>Consultar saldo <SavingsOutlinedIcon /></button>
+                      <div className="grid-functions__card details-saldo">
+                        <button className='grid-functions__cardButton' onClick={toggleSaldo}>
+                            Consultar saldo <SavingsOutlinedIcon />
+                        </button>
+                        {mostrarSaldo && (
+                            <div className="details-saldo__card">
+                                <p><b>Saldo:</b> <span>R$ {saldo.toFixed(2)}</span></p>
+                                <p><b>Entradas:</b> <span className='tagEntradas'>R$ {entradas.toFixed(2)}</span></p>
+                                <p><b>Saídas:</b> <span className='tagSaidas'>R$ {saidas.toFixed(2)}</span></p>
+                            </div>
+                        )}
                       </div>
 
                       <div className="grid-functions__card">
