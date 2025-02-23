@@ -49,7 +49,9 @@ const SistemaBancario = () => {
         const valor = parseFloat(valorOperacaoD);
         if (valor > 0) {
             setSaldo(saldo + valor);
-            setValorOperacaoD("");
+            setValorOperacaoD("");         
+        } else {
+          alert('Erro ao depositar, digite um valor válido!');          
         }
     };
 
@@ -59,7 +61,7 @@ const SistemaBancario = () => {
             setSaldo(saldo - valor);
             setValorOperacaoS("");
         } else {
-            alert('Saldo insuficiente!');
+            alert('Saldo insuficiente para sacar!');
         }
     };
 
@@ -107,7 +109,7 @@ const SistemaBancario = () => {
                             </div>
                             <button type="submit" className="primary-button">Abrir conta <AccountBalanceIcon /></button>
                         </form>
-                        {conta && <p>Conta aberta com sucesso! O Nº de sua conta é {conta.numero} <button onClick={() => setPage('login')} className='button-login'>Ir para login</button></p>}
+                        {conta && <p>Conta aberta com sucesso! O Nº de sua conta é {conta.numero}. <br/> <button onClick={() => setPage('login')} className='button-login'>Ir para login</button></p>}
                     </div>
                 </div>
                 <Footer />
@@ -159,11 +161,11 @@ const SistemaBancario = () => {
                     <div className="banco-container-content__colRight grid-functions">
                       <div className="grid-functions__card perfil_card_container__saldo">
                         <p className='perfil-card__saldo'>R$ {saldo.toFixed(2)}</p>
-                        <span>Ver extrato <KeyboardArrowRightIcon /></span>
+                        <span className='ver-cartao'>Ver extrato <KeyboardArrowRightIcon /></span>
                       </div>
 
                       <div className="grid-functions__card perfil_card_container__saldo">
-                        <button className='grid-functions__cardButton'>Ver meus cartões <CreditCardIcon/></button>
+                        <button className='grid-functions__cardButton ver-cartao'>Ver meus cartões <CreditCardIcon/></button>
                       </div>
 
                       <div className="grid-functions__card">

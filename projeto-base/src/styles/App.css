@@ -19,6 +19,8 @@ body {
 }
 
 a {
+  all: unset;
+  cursor: pointer;
   text-decoration: none;
 }
 
