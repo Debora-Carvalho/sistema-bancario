@@ -6,10 +6,13 @@ Projeto de sistema bancário simples utilizando React.js e Vite.js.
 
 ## Screenshots
 
-![Website/Home Screenshot](/projeto-base/public/screenshot-home-projeto.png);
-![Website/cadastro Screenshot](/projeto-base/public/screenshot-cadastro-projeto.png);
-![Website/login Screenshot](/projeto-base/public/screenshot-login-projeto.png);
-![Website/login Screenshot](/projeto-base/public/screenshot-perfil-projeto.png);
+![Website/Home Screenshot](/projeto-base/public/screenshot-home-projeto.png)
+<br>
+![Website/cadastro Screenshot](/projeto-base/public/screenshot-cadastro-projeto.png)
+<br>
+![Website/login Screenshot](/projeto-base/public/screenshot-login-projeto.png)
+<br>
+![Website/login Screenshot](/projeto-base/public/screenshot-perfil-projeto.png)
 
 ## Para executar localmente
 
